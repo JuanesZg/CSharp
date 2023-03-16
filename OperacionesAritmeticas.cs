@@ -4,6 +4,23 @@ class OperacionesAritmeticas{
     public int numero_dos { get; set; }
     public int operation { get; set; }
     //Metodos (Funciones o Acciones)
+    public void operacionRealizar (){
+        if (operation == 1){
+            sumar_num();
+        }
+        else if (operation == 2){
+            restar_num();
+        }
+        else if (operation == 3){
+            multiplicar_numeros();
+        }
+        else if (operation == 4){
+            dividir_numeros();
+        }
+        else{
+            Console.WriteLine("Operacion Invalida");
+        }
+    }
     public void sumar_num (){
         //Operaciones
         int Resultado = numero_uno + numero_dos;

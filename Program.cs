@@ -23,7 +23,3 @@ var operacion_dos = new OperacionesAritmeticas(){
 
 //Para mostrar los resultados de la suma, se debe hacer la operacion a traves
 //Del Objeto ya que es la que ahora tiene los atributos
-
-operacion_uno.operacion_num();
-
-

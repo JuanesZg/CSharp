@@ -5,42 +5,64 @@ class OperacionesAritmeticas{
     public int operation { get; set; }
 
     //Metodos (Funciones o Acciones)
-    public void operacionRealizar (){
-        if (operation == 1){
-            sumar_num();
-        }
-        else if (operation == 2){
-            restar_num();
-        }
-        else if (operation == 3){
-            multiplicar_numeros();
-        }
-        else if (operation == 4){
-            dividir_numeros();
-        }
-        else{
-            Console.WriteLine("Operacion Invalida");
-        }
-    }
-    public void sumar_num (){
+    public int sumar_num (int n1, int n2){
         //Operaciones
-        int Resultado = numero_uno + numero_dos;
+        int ResultadoSuma = n1 + n2;
         //Salida - Impresa o Return
-        Console.WriteLine("El resultado de la suma es: " + Resultado);
+        return ResultadoSuma;
     }
-    public void restar_num (){
+    public int restar_num (int n1, int n2){
         //Operaciones
-        int Resultado = numero_uno - numero_dos;
+        int ResultadoResta = n1 - n2;
         //Salida - Impresa o Return
-        Console.WriteLine("El resultado de la resta es: " + Resultado);
+        return ResultadoResta;
     }
-    public void multiplicar_numeros (){
-        int Resultado = numero_uno * numero_dos;
-        Console.WriteLine("El resultado de la multiplicacion es: " + Resultado);
+    public int multiplicar_numeros (int n1, int n2){
+        int ResultadoMultiplicacion = n1 * n2;
+        return ResultadoMultiplicacion;
     }
-    public void dividir_numeros (){
-        int Resultado = numero_uno / numero_dos;
-        Console.WriteLine("El resultado de la division es: " + Resultado);
+    public float dividir_numeros (int n1, int n2){
+        float ResultadoDivision = n1 / n2;
+        return ResultadoDivision;
     }
+    public void PrintSuma(){
+        int ResultadoOperacion = sumar_num(numero_uno, numero_dos);
+        Console.WriteLine($"La suma es {ResultadoOperacion}");
+    }
+    public void PrintResta(){
+        int ResultadoOperacion = restar_num(numero_uno, numero_dos);
+        Console.WriteLine($"La resta es {ResultadoOperacion}");
+    }
+    public void PrintMultiplicacion(){
+        int ResultadoOperacion = multiplicar_numeros(numero_uno, numero_dos);
+        Console.WriteLine($"La multiplicacion es {ResultadoOperacion}");
+    }
+    public void PrintDivision(){
+        float ResultadoOperacion = dividir_numeros(numero_uno, numero_dos);
+        Console.WriteLine($"La division es {ResultadoOperacion}");
+    }
+    public void printResultado(){
+        switch (operation)
+        {
+            case 1:
+                PrintSuma();
+                break;
+            case 2:
+                PrintResta();
+                break;
+            case 3:
+                PrintMultiplicacion();
+                break;
+            case 4:
+                PrintDivision();
+                break;
+            default:
+                Console.WriteLine("Operación inválida");
+                break;
+        }
+    }
+
+
+
     //Metodo constructor - no se ve pero siempre se llama igual que la clase
 }

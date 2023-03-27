@@ -4,6 +4,7 @@ class TarifasHoteleras{
     public int TarifaIndividual = 2500;
     public int TarifaDoble = 4600;
     public int TarifaFamiliar = 5200;
+    public string Tarifa { get; set; }
 
     //Metodos de la clase
     //Metodo para calcular el costo de la estadia de una tarifa individual
@@ -42,5 +43,38 @@ class TarifasHoteleras{
         //Se imprime el resultado del calculo
         Console.WriteLine($"El costo de su estadía por {diasEstadia} dias es de {CostoEstadia}");
     }
-    
+    public double CalcularFamiliar(int diasHospedaje){
+        //Se calcula el precio básico de la estadia multiplicando los días por la tarifa seleccionada
+        double CostoEstadiaNoIVA = (diasHospedaje * TarifaFamiliar);
+        //Se calcula el precio de la estadia sumandole el 19% del IVA
+        double CostoEstadiaIVA =  CostoEstadiaNoIVA + (CostoEstadiaNoIVA*0.19);
+        //Se le aplica un descuento del 5% al precio con IVA
+        double CostoFinal = CostoEstadiaIVA - (CostoEstadiaIVA*0.15);
+        //Se retorna el precio final luego de las operaciones
+        return CostoFinal;
+    }
+    //Metodo para mostrar el calculo del costo de la estadia de una tarifa doble
+    public void PrintFamiliar(){
+        //Se trae el valor que retorna el metodo CalcularIndividual luego de realizar la operación
+        double CostoEstadia = CalcularFamiliar(diasEstadia);
+        //Se imprime el resultado del calculo
+        Console.WriteLine($"El costo de su estadía por {diasEstadia} dias es de {CostoEstadia}");
+    }
+    public void printOperacionTarifas(){
+        switch (Tarifa)
+        {
+            case "Individual":
+                PrintIndividual();
+                break;
+            case "Doble":
+                PrintDoble();
+                break;
+            case "Familiar":
+                PrintFamiliar();
+                break;
+            default:
+                Console.WriteLine("Operación inválida");
+                break;
+        }
+    }
 }

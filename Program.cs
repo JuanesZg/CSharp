@@ -31,8 +31,14 @@
 Console.WriteLine("Cuántos días planea hospedarse en el hotel?");
 int diasEnHotel = int.Parse(Console.ReadLine());
 
+Console.WriteLine("Que tipo de habitación desea?\n- 'Individual'\n- 'Doble'\n- 'Familiar'");
+string TarifaHabitacion = (Console.ReadLine());
+
 var Hotel_Uno = new TarifasHoteleras(){
-    diasEstadia = diasEnHotel
+    diasEstadia = diasEnHotel,
+    Tarifa = TarifaHabitacion
 };
 
-Hotel_Uno.PrintIndividual();
+Hotel_Uno.printOperacionTarifas();
+
+

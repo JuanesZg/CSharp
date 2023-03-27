@@ -3,7 +3,6 @@ class OperacionesAritmeticas{
     public int numero_uno { get; set; }
     public int numero_dos { get; set; }
     public int operation { get; set; }
-
     //Metodos (Funciones o Acciones)
     public int sumar_num (int n1, int n2){
         //Operaciones
@@ -25,6 +24,7 @@ class OperacionesAritmeticas{
         float ResultadoDivision = n1 / n2;
         return ResultadoDivision;
     }
+<<<<<<< HEAD
     public void PrintSuma(){
         int ResultadoOperacion = sumar_num(numero_uno, numero_dos);
         Console.WriteLine($"La suma es {ResultadoOperacion}");
@@ -64,5 +64,29 @@ class OperacionesAritmeticas{
 
 
 
+=======
+    public void operacion_num (){
+        if (operation == 1)
+        {
+            sumar_num();
+        }
+        else if (operation == 2)
+        {
+            restar_num();
+        }
+        else if (operation == 3)
+        {
+            multiplicar_numeros();
+        }
+        else if (operation == 4)
+        {
+            dividir_numeros();
+        }
+        else
+        {
+            Console.WriteLine("Operación inválida");
+        }
+    }
+>>>>>>> 5bd8e7133e28baac79dbb1cd58bd8ee44a66ae8c
     //Metodo constructor - no se ve pero siempre se llama igual que la clase
 }
